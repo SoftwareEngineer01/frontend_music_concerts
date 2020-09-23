@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
             if (user) {            
                 return true;
             }else {
-                this.notificationService.openSnackBar('Su sesión a expirado');
+                this.notificationService.openSnackBar('No has iniciado sesión');
                 this.router.navigate(['auth/login']);
                 return false;
             }       

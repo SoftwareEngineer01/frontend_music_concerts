@@ -24,7 +24,7 @@ export class DashboardHomeComponent implements OnInit {
     this.logger.log('Dashboard loaded');
 
     setTimeout(() => {
-      this.notificationService.openSnackBar('Welcome!');
+      this.notificationService.openSnackBar('Bienvenido!');
     });
   }
 }
