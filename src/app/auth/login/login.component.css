@@ -1,7 +1,17 @@
 .mat-card-title{
-    text-align: center;
+    text-align: center;       
 }
 
-.mat-card-actions button{
+.mat-card>:first-child {
+    margin: 35px 35px;
+}
+
+.mat-card-actions .mat-raised-button:first-child {
+    margin-bottom: 10px;
+}
+
+.mat-fab, .mat-flat-button, .mat-mini-fab, .mat-raised-button {
     width: 150px;
+    background-color: #472404;
+    color: white;    
 }
