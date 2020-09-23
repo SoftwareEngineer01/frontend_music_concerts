@@ -48,12 +48,11 @@ export class LoginComponent implements OnInit {
         this.authenticationService
             .login(data)
             .subscribe(
-                data => {
-                   console.log(data);                   
+                data => {                          
                     this.router.navigate(['/']);
                 },
                 error => {
-                    this.notificationService.openSnackBar('Acceso no autorizado');
+                    this.notificationService.openSnackBar('Credenciales no válidas');
                     this.loading = false;
                 }
             );
