@@ -1,0 +1,71 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+    <div fxFlex="95%">
+  
+      <mat-card>
+        <mat-card-content>
+          <h2>Actualizar Cliente</h2>
+
+          <div fxLayout="row" class="container no-records animate">
+
+            <form class="example-form" [formGroup]="customerForm" (ngSubmit)="updateCustomer()" novalidate>
+
+                <mat-form-field class="example-full-width">
+                  <mat-label>Nombre</mat-label>
+                  <input matInput formControlName="name" placeholder="Digite su nombre">
+                  <mat-error *ngIf="handleError('name', 'required')">
+                   El nombre es <strong>obligatorio</strong>
+                  </mat-error>
+                  <mat-error *ngIf="handleError('name', 'pattern')">
+                    Debe ingresar solo letras
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Apellidos</mat-label>
+                    <input matInput formControlName="surname" placeholder="Digite sus apellidos">
+                    <mat-error *ngIf="handleError('surname', 'required')">
+                        Los apellidos son <strong>obligatorios</strong>
+                    </mat-error>
+                    <mat-error *ngIf="handleError('surname', 'pattern')">
+                        Debe ingresar solo letras
+                    </mat-error>
+                </mat-form-field>
+                
+                <mat-form-field class="example-full-width">
+                    <mat-label>Identificación</mat-label>
+                    <input matInput formControlName="identification" placeholder="Identificación">
+                    <mat-error *ngIf="handleError('identification', 'required')">
+                        La identificación es <strong>obligatoria</strong>
+                    </mat-error>
+                    <mat-error *ngIf="handleError('identification', 'pattern')">
+                        Debe ingresar solo números
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Teléfono</mat-label>
+                    <input matInput formControlName="telephone" placeholder="Digite su teléfono">
+                    <mat-error *ngIf="handleError('telephone', 'required')">
+                        El teléfono es <strong>obligatorio</strong>
+                    </mat-error>
+                    <mat-error *ngIf="handleError('telephone', 'pattern')">
+                        Debe ingresar solo números
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- <mat-error class="error" *ngIf="messageError">
+                    {{ messageError }}
+                </mat-error> -->
+                
+                <button type="submit" mat-raised-button color="primary">Actualizar</button>
+                <button mat-raised-button color="warn" (click)="cancel()">Cancelar</button>
+                              
+             </form>           
+           
+          </div>
+             
+        </mat-card-content>
+      </mat-card>
+  
+    </div>
+  </div>

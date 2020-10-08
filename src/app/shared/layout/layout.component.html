@@ -9,7 +9,7 @@
 
     <a class="navbar-brand" [routerLink]="['/']" matTooltip="Home">
       <h1>
-        angular-material-template
+        Administración de Conciertos
       </h1>
     </a>
 
@@ -68,18 +68,11 @@
           <p mat-line> Dashboard </p>
         </a>
 
-        <a mat-list-item [routerLink]="['/buyers']" routerLinkActive="active">
-          <mat-icon mat-list-icon>
-            business
-          </mat-icon>
-          <p mat-line> Compradores </p>
-        </a>
-
         <a mat-list-item [routerLink]="['/customers']" routerLinkActive="active">
           <mat-icon mat-list-icon>
-            business
+            groups
           </mat-icon>
-          <p mat-line> Customers </p>
+          <p mat-line> Clientes </p>
         </a>
         <a mat-list-item [routerLink]="['/users']" routerLinkActive="active">
           <mat-icon mat-list-icon>
@@ -135,11 +128,11 @@
     <!-- Main content -->
     <mat-sidenav-content class="sidenav-content">
 
-      <div class="progress-bar-container">
+      <!-- <div class="progress-bar-container">
         <mat-progress-bar color="accent" mode="indeterminate" *ngIf="spinnerService.visibility | async">
         </mat-progress-bar>
-        <!-- <mat-spinner class="spinner" [diameter]="50" *ngIf="showSpinner"></mat-spinner> -->
-      </div>
+         <mat-spinner class="spinner" [diameter]="50" *ngIf="showSpinner"></mat-spinner>
+      </div> -->
 
 
       <router-outlet></router-outlet>
