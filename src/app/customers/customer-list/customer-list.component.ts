@@ -60,9 +60,7 @@ export class CustomerListComponent implements OnInit {
             (resp:any) => {                         
                 this.customersData = resp.data;
                 this.dataSource = new MatTableDataSource<any>(this.customersData);
-            setTimeout(() => {
-              this.dataSource.paginator = this.paginator;
-            }, 0);          
+                this.dataSource.paginator = this.paginator;                  
             },
             error => {
               console.log(error);              

@@ -49,11 +49,8 @@ export class CustomerEditComponent implements OnInit {
       this.customerService
           .getCustomerById(this.id_customer)
           .subscribe(
-              (resp:any) => {          
-                console.log(resp);               
-                  this.customerData = resp.data;
-                  // this.dataSource = new MatTableDataSource<any>(this.customersData);
-                  console.log(this.customerData);
+              (resp:any) => {                            
+                  this.customerData = resp.data;                                
                   this.customerForm = this.formbuilder.group({
                     name:           [this.customerData.name,  [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],
                     surname:        [this.customerData.surname,  [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],
