@@ -19,4 +19,16 @@ export class ConcertsService {
     return this.http.post(environment.urlApi + 'concert', data);
   }
 
+  getConcerById(id){
+    return this.http.get(environment.urlApi + 'concert/'+ id);
+  }
+
+  updateConcert(id, data:any){
+    return this.http.put(environment.urlApi + 'concert/'+ id, data);
+  }  
+
+  deleteConcert(id){
+    return this.http.delete(environment.urlApi + 'concert/'+ id);
+  }
+
 }
