@@ -1,0 +1,11 @@
+table {
+    width: 100%;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.mat-raised-button:not([class*=mat-elevation-z]) {
+    margin: 8px 8px 8px 0;
+}
