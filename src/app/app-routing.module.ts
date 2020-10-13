@@ -19,30 +19,10 @@ const appRoutes: Routes = [
         canActivate: [AuthGuard]
     },
     {
-        path: 'users',
-        loadChildren: './users/users.module#UsersModule',
+        path: 'concerts',
+        loadChildren: './concerts/concerts.module#ConcertsModule',
         canActivate: [AuthGuard]
-    },
-    {
-        path: 'account',
-        loadChildren: './account/account.module#AccountModule',
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'icons',
-        loadChildren: './icons/icons.module#IconsModule',
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'typography',
-        loadChildren: './typography/typography.module#TypographyModule',
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'about',
-        loadChildren: './about/about.module#AboutModule',
-        canActivate: [AuthGuard]
-    },
+    },    
     {
         path: '**',
         redirectTo: 'dashboard',
