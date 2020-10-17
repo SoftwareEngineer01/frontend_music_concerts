@@ -22,7 +22,12 @@ const appRoutes: Routes = [
         path: 'concerts',
         loadChildren: './concerts/concerts.module#ConcertsModule',
         canActivate: [AuthGuard]
-    },    
+    },   
+    {
+        path: 'reservations',
+        loadChildren: './reservations/reservations.module#ReservationsModule',
+        canActivate: [AuthGuard]
+    }, 
     {
         path: '**',
         redirectTo: 'dashboard',
