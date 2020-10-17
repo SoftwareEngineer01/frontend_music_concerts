@@ -80,6 +80,11 @@
           <p mat-line> Conciertos </p>
         </a> 
 
+        <a mat-list-item [routerLink]="['/reservations']"  routerLinkActive="active"> 
+          <mat-icon mat-list-icon>source</mat-icon>
+          <p mat-line> Reservas </p>
+        </a> 
+
         <a mat-list-item [routerLink]="['/auth/login']">
           <mat-icon mat-list-icon>exit_to_app</mat-icon>
           <p mat-line> Cerrar Sesión </p>
