@@ -1,0 +1,83 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+    <div fxFlex="95%">
+  
+      <mat-card>
+        <mat-card-content>
+          <h2>Reservas</h2>  
+          
+          <div layout="row">
+            <a mat-raised-button color="primary" routerLink="add-reservation">Agregar</a>             
+          </div>
+          
+          <mat-form-field>
+            <mat-label>Buscar...</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Reserva #1.." #input>
+          </mat-form-field>
+  
+          <table class="animate" mat-table [dataSource]="dataSource" matSort>
+  
+            <!-- Id Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+  
+             <!-- Comprador Column -->
+             <ng-container matColumnDef="buyer">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Comprador </th>
+              <td mat-cell *matCellDef="let element"> {{element.buyer}} </td>
+            </ng-container>
+
+             <!-- Nombre concierto Column -->
+             <ng-container matColumnDef="name_concert">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Concierto </th>
+              <td mat-cell *matCellDef="let element"> {{element.name_concert}} </td>
+            </ng-container>
+          
+            <!-- Date Column -->
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+              <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+            </ng-container>
+  
+            <!-- Número de personas Column -->
+             <ng-container matColumnDef="number_people">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Personas </th>
+              <td mat-cell *matCellDef="let element"> {{element.number_people}} </td>
+            </ng-container>  
+            
+             <!-- Número de Ticket Column -->
+             <ng-container matColumnDef="ticket_number">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Ticket </th>
+              <td mat-cell *matCellDef="let element"> {{element.ticket_number}} </td>
+            </ng-container>
+
+            <!-- Estado Concierto Column -->
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="acciones">
+              <th mat-header-cell *matHeaderCellDef> Acciones </th>
+              <td mat-cell *matCellDef="let element; let i = index;">
+                <button mat-raised-button color="primary" class="push-right"
+                routerLink="edit-reservation/{{element.id}}">Editar</button>
+                <button mat-raised-button color="warn" (click)="delete(i, element.id)">Eliminar</button>
+              </td>
+            </ng-container>
+  
+          
+            <!--  -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+  
+          
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+          
+        </mat-card-content>
+      </mat-card>
+  
+    </div>
+  </div>
