@@ -7,7 +7,7 @@
 
           <div fxLayout="row" class="container no-records animate">
 
-            <form class="example-form" [formGroup]="reservationForm" (ngSubmit)="addConcert()" novalidate>
+            <form class="example-form" [formGroup]="reservationForm" novalidate>
 
 
                 <mat-form-field class="example-full-width">
@@ -54,7 +54,7 @@
                 </mat-form-field>               
                 
                 <div class="btn">
-                  <button type="submit" mat-raised-button color="primary">Agregar</button>
+                  <button type="submit" mat-raised-button color="primary" (click)="addReservation()">Agregar</button>
                   <button mat-raised-button color="warn" (click)="cancel()">Cancelar</button>
                 </div>
                               

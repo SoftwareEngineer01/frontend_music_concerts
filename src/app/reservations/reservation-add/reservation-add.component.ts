@@ -75,7 +75,7 @@ export class ReservationAddComponent implements OnInit {
     })
   }
 
-  addConcert(){         
+  addReservation(){         
     if(this.reservationForm.valid){      
       this.reservationService.addReservation(this.reservationForm.value).subscribe((resp:any) => {          
       this.notificationService.openSnackBar(resp.message);        

@@ -7,7 +7,7 @@
 
           <div fxLayout="row" class="container no-records animate">
 
-            <form class="example-form" [formGroup]="customerForm" (ngSubmit)="addCustomer()" novalidate>
+            <form class="example-form" [formGroup]="customerForm" novalidate>
 
                 <mat-form-field class="example-full-width">
                   <mat-label>Nombre</mat-label>
@@ -57,7 +57,7 @@
                     {{ messageError }}
                 </mat-error>
                 
-                <button type="submit" mat-raised-button color="primary">Agregar</button>
+                <button type="submit" mat-raised-button color="primary" (click)="addCustomer()">Agregar</button>
                 <button mat-raised-button color="warn" (click)="cancel()">Cancelar</button>
                               
              </form>           
